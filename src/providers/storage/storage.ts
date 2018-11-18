@@ -8,7 +8,7 @@ export class StorageProvider {
   database: SQLiteObject;
 
 
-  constructor(public http: HttpClient, private sqlite: SQLite,platform:Platform) {
+  constructor(public http: HttpClient, private sqlite: SQLite, platform: Platform) {
     platform.ready().then(() => {
       this.createdDb();
     });
@@ -51,18 +51,10 @@ export class StorageProvider {
     });
   }
 
-  getAllUsers(credentials:Credential) {
-    this.database.executeSql("SELECT *  FROM users", []).then(res => {
-      alert(JSON.stringify(res.rows.item(1)));
-      for (var i=0;i<res.rows.length;i++) {
-        let user:User=res.rows.item(i);
-        if (user.userId === credentials.userId && user.password === credentials.password) {
-          alert(JSON.stringify(credentials));
-        }
-      }
-    });
+  getAllUsers(credentials: Credential) {
+    return this.database.executeSql("SELECT exists( SELECT * FROM users where user_id = ? and password=?) as  exist;",
+      [credentials.userId, credentials.password])
   }
-
 }
 
 export class User {
@@ -70,6 +62,7 @@ export class User {
   userId: number;
   password: string;
 }
+
 export class Credential {
   userId: number;
   password: string;

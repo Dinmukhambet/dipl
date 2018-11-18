@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { StorageProvider } from '../providers/storage/storage';
 import {HttpClientModule} from "@angular/common/http";
 import {SQLite} from "@ionic-native/sqlite";
+import {WelcomePage} from "../pages/welcome/welcome";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    WelcomePage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import {SQLite} from "@ionic-native/sqlite";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    WelcomePage
   ],
   providers: [
     StatusBar,
