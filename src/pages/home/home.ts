@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController, Platform} from 'ionic-angular';
-import {Credential, StorageProvider, User} from "../../providers/storage/storage";
+import {MenuController, NavController} from 'ionic-angular';
+import {Credential, StorageProvider} from "../../providers/storage/storage";
 import {WelcomePage} from "../welcome/welcome";
+import {RegistrationPage} from "../registration/registration";
+import {EmailComposer} from "@ionic-native/email-composer";
 
 @Component({
   selector: 'page-home',
@@ -9,38 +11,46 @@ import {WelcomePage} from "../welcome/welcome";
 })
 export class HomePage implements OnInit {
 
-  user: User = new User();
   creadential: Credential = new Credential();
-  tmp: string;
 
-  constructor(public navCtrl: NavController, private storageService: StorageProvider, private platform: Platform) {
+  constructor(public navCtrl: NavController, private storageService: StorageProvider,
+              private emailComposer: EmailComposer, private menuCtrl: MenuController) {
   }
 
   ngOnInit(): void {
   }
 
-  regUser() {
-    this.storageService.createUser(this.user);
+  ionViewDidEnter() {
+    //to disable menu, or
+    this.menuCtrl.enable(false);
+  }
 
+  ionViewWillLeave() {
+    // to enable menu.
+    this.menuCtrl.enable(true);
   }
 
   loginUser() {
-    function hasUser(res) {
+    /*function hasUser(res) {
       return res.rows.item(0).exist === 1;
     }
 
     this.storageService.getAllUsers(this.creadential).then(res => {
 
       if (hasUser(res)) {
-        this.navCtrl.push(WelcomePage);
       }
 
     }).catch(err => {
       alert('rejected');
-    });
+    });*/
+
+    this.navCtrl.setRoot(WelcomePage);
 
 
   }
 
+  toRegPage() {
+    this.navCtrl.push(RegistrationPage);
+  }
 
 }

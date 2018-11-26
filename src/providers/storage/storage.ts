@@ -45,7 +45,7 @@ export class StorageProvider {
     this.database.executeSql("INSERT INTO users (fullName, user_id, password) VALUES (?,?,?)",
       [user.fullName, user.userId, user.password])
       .then(res => {
-        alert(res.insertId);
+        console.log(res);
       }).catch(err => {
       console.log(err)
     });
@@ -55,6 +55,17 @@ export class StorageProvider {
     return this.database.executeSql("SELECT exists( SELECT * FROM users where user_id = ? and password=?) as  exist;",
       [credentials.userId, credentials.password])
   }
+
+  insertCounterData(indicator:string, date:string) {
+    this.database.executeSql('insert into history(indicator, date) values(?,?)', [indicator, date])
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+}
+
+export class CounterData {
+  indicator: string;
+  date: string;
 }
 
 export class User {

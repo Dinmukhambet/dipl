@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label >userId</ion-label>
+    <ion-input type="text" [(ngModel)]="user.userId"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label >fullName</ion-label>
+    <ion-input type="text" [(ngModel)]="user.fullName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="regUser()">reg</button>
+
+</ion-content>

@@ -3,16 +3,16 @@ import {NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-welcome',
-  templateUrl: 'welcome.html',
+  selector: 'page-history',
+  templateUrl: 'history.html',
 })
-export class WelcomePage {
+export class HistoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
+    console.log('ionViewDidLoad HistoryPage');
   }
 
 }

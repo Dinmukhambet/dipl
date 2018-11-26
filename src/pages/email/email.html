@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>email</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item text-center no-lines>
+    <button ion-button (click)="setPhotoFromGallery()" clear>Upload photo</button>
+    <button ion-button [disabled]="!(body.length > 0  && imageUrl)" (click)="sendEmail()" clear>Send email</button>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>indicatorData</ion-label>
+    <ion-input [(ngModel)]="body"></ion-input>
+  </ion-item>
+  <ion-card *ngIf="imageUrl">
+    <ion-card-header>Current Image</ion-card-header>
+    <ion-card-content>
+      <img [src]="domSanitizer.bypassSecurityTrustUrl(imageUrl)" *ngIf="imageUrl"/>
+      <ion-img [src]="imageUrl"></ion-img>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
