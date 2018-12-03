@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +13,10 @@
 
 
 <ion-content padding>
-
+  <ion-list *ngIf="history.length > 0">
+    <ion-item *ngFor="let historyItem of history">
+      <h2>{{historyItem.indicator}}</h2>
+      <p>{{historyItem.date}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

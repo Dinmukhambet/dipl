@@ -16,8 +16,10 @@ import {Camera} from "@ionic-native/camera";
 import {EmailPage} from "../pages/email/email";
 import {HistoryPage} from "../pages/history/history";
 import {File} from "@ionic-native/file";
-import { Base64 } from '@ionic-native/base64';
+import {Base64} from '@ionic-native/base64';
 import {FilePath} from "@ionic-native/file-path";
+import {LocalNotifications} from '@ionic-native/local-notifications';
+import {NotificationsProvider} from '../providers/notificatins/notificatins';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import {FilePath} from "@ionic-native/file-path";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StorageProvider, SQLite, EmailComposer, Camera, File, Base64, FilePath
+    StorageProvider, SQLite, EmailComposer, Camera, File, Base64, FilePath,
+    LocalNotifications,
+    NotificationsProvider
   ]
 })
 export class AppModule {

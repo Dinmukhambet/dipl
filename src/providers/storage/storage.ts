@@ -61,6 +61,11 @@ export class StorageProvider {
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
+
+  getCounterData() {
+    return this.database.executeSql('select * from history',[]);
+  }
+
 }
 
 export class CounterData {

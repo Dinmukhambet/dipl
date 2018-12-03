@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
+import {NotificationsProvider} from "../../providers/notificatins/notificatins";
+
 
 
 @Component({
@@ -8,7 +10,9 @@ import {NavController, NavParams} from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private notifications: NotificationsProvider) {
+    notifications.init();
   }
 
   ionViewDidLoad() {
