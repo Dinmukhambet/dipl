@@ -1,6 +1,23 @@
 page-home {
-  ion-list {
+  ion-card {
     top: 30%;
     position: absolute;
+    border-radius: 15px !important;
   }
+  ion-content {
+    background-color: #4ca3d6 !important;
+  }
+
+  ion-input {
+
+  }
+}
+.toolbar-background {
+  background: #4ca3d6 !important;
+}
+.toolbar-title {
+  color:#fff
+}
+.bar-button {
+  color:#fff
 }

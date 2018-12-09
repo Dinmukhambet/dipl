@@ -1,20 +1,22 @@
-<ion-content padding>
+<ion-content>
 
-  <ion-list>
-    <ion-item text-capitalize text-center>Electricity</ion-item>
 
-    <ion-item>
-      <ion-label fixed>userId</ion-label>
-      <ion-input type="number" [(ngModel)]="creadential.userId"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label fixed>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="creadential.password"></ion-input>
-    </ion-item>
-    <ion-item text-center no-lines>
-      <button ion-button (click)="loginUser()" clear>auth</button>
-      <button ion-button (click)="toRegPage()" clear>sign up</button>
-    </ion-item>
-  </ion-list>
+    <ion-card padding>
+      <ion-item text-center text-uppercase>Electricity</ion-item>
+
+      <ion-item>
+        <ion-label fixed>User id</ion-label>
+        <ion-input type="number" [(ngModel)]="creadential.userId"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="creadential.password"></ion-input>
+      </ion-item>
+      <ion-item text-center no-lines>
+        <button ion-button (click)="loginUser()" clear>Log in</button>
+        <button ion-button (click)="toRegPage()" clear>sign up</button>
+      </ion-item>
+    </ion-card>
 </ion-content>

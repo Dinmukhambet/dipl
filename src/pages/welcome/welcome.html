@@ -10,7 +10,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
   <ion-card *ngIf="isPayDay()">
     <ion-card-header>
@@ -19,5 +19,14 @@
     <ion-card-content>
       You should to pay check off
     </ion-card-content>
+    <ion-row>
+      <ion-col offset-4>
+        <button ion-button icon-start clear (click)="gotoEmail()">
+          <ion-icon name="mail"></ion-icon>
+          Send
+        </button>
+      </ion-col>
+    </ion-row>
+
   </ion-card>
 </ion-content>

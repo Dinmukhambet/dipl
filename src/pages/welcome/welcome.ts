@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {NotificationsProvider} from "../../providers/notificatins/notificatins";
+import {EmailPage} from "../email/email";
 
 
 @Component({
@@ -24,6 +25,10 @@ export class WelcomePage {
     let date = new Date();
     let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     return date.getDate() >= 21 && date.getDate() <= lastDay.getDate();
+  }
+
+  gotoEmail() {
+    this.navCtrl.push(EmailPage);
   }
 
 
