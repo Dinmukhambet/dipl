@@ -11,8 +11,7 @@ export class NotificationsProvider {
   init() {
     this.localNotifications.schedule({
       id: 1,
-      text: 'privet',
-      trigger: { every: {  day: 21, hour: 11, minute: 0 } },
+      text: 'You should to pay check off',
       sound:null
     });
   }

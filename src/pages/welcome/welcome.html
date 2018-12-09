@@ -5,11 +5,19 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>welcome</ion-title>
+    <ion-title>Notifications</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
+  <ion-card *ngIf="isPayDay()">
+    <ion-card-header>
+      Pay day
+    </ion-card-header>
+    <ion-card-content>
+      You should to pay check off
+    </ion-card-content>
+  </ion-card>
 </ion-content>
