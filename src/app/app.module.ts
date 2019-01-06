@@ -20,6 +20,8 @@ import {Base64} from '@ionic-native/base64';
 import {FilePath} from "@ionic-native/file-path";
 import {LocalNotifications} from '@ionic-native/local-notifications';
 import {NotificationsProvider} from '../providers/notificatins/notificatins';
+import {CalcPage} from "../pages/calc/calc";
+import {AboutPage} from "../pages/about/about";
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {NotificationsProvider} from '../providers/notificatins/notificatins';
     WelcomePage,
     RegistrationPage,
     EmailPage,
-    HistoryPage
+    HistoryPage,
+    CalcPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import {NotificationsProvider} from '../providers/notificatins/notificatins';
     WelcomePage,
     RegistrationPage,
     EmailPage,
-    HistoryPage
+    HistoryPage,
+    CalcPage,
+    AboutPage
   ],
   providers: [
     StatusBar,

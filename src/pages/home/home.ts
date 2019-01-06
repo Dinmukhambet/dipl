@@ -31,13 +31,14 @@ export class HomePage implements OnInit {
   }
 
   loginUser() {
-    /*function hasUser(res) {
+    function hasUser(res) {
       return res.rows.item(0).exist === 1;
     }
 
-    this.storageService.getAllUsers(this.creadential).then(res => {
+    /*this.storageService.getAllUsers(this.creadential).then(res => {
 
       if (hasUser(res)) {
+        this.navCtrl.setRoot(WelcomePage);
       }
 
     }).catch(err => {
@@ -45,8 +46,6 @@ export class HomePage implements OnInit {
     });*/
 
     this.navCtrl.setRoot(WelcomePage);
-
-
   }
 
   toRegPage() {

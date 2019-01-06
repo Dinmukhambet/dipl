@@ -8,6 +8,8 @@ import {StorageProvider} from "../providers/storage/storage";
 import {WelcomePage} from "../pages/welcome/welcome";
 import {EmailPage} from "../pages/email/email";
 import {HistoryPage} from "../pages/history/history";
+import {CalcPage} from "../pages/calc/calc";
+import {AboutPage} from "../pages/about/about";
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +32,9 @@ export class MyApp {
     this.pages = [
       {page: WelcomePage, title: 'Notifications', icon: 'notifications'},
       {page: EmailPage, title: 'Email', icon: 'mail'},
-      {page: HistoryPage, title: 'History', icon: 'archive'}
+      {page: CalcPage, title: 'Calculator', icon: 'calculator'},
+      {page: HistoryPage, title: 'History', icon: 'archive'},
+      {page: AboutPage, title: 'About', icon: 'information-circle'}
     ];
   }
 

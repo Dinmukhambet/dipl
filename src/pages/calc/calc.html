@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Calculator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label>Legal entity</ion-label>
+    <ion-checkbox color="dark" [(ngModel)]="isIndividualEntity" (ionChange)="summarize()"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Energy Count</ion-label>
+    <ion-input type="number" [(ngModel)]="energyCount" (input)="summarize()"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item text-end no-lines>
+    Summarize: {{sum}}
+  </ion-item>
+</ion-content>
