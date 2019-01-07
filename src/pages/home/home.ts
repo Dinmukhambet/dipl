@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
     this.storageService.getAllUsers(this.creadential).then(res => {
 
       if (hasUser(res)) {
-        this.navCtrl.setRoot(WelcomePage);
+        this.navCtrl.setRoot(WelcomePage, this.creadential);
       }
 
     }).catch(err => {

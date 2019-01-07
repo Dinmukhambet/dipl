@@ -66,7 +66,7 @@ export class EmailPage {
   sendEmail() {
     let email: EmailComposerOptions = {
         app: 'gmail',
-        to: 'dimashdim@gmail.com',
+        to: 'nazgul100893@mail.ru',
         subject: 'the showings from counter with proofs',
         body: this.body,
         attachments: [this.currentImage]

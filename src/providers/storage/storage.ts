@@ -56,6 +56,10 @@ export class StorageProvider {
       [credentials.userId, credentials.password])
   }
 
+  getUserName(credentials:Credential) {
+    return this.database.executeSql("select fullName from users where user_id = ?",[credentials.userId]);
+  }
+
   insertCounterData(indicator:string, date:string) {
     this.database.executeSql('insert into history(indicator, date) values(?,?)', [indicator, date])
       .then(res => console.log(res))

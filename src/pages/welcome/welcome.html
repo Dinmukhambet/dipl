@@ -12,14 +12,14 @@
 
 <ion-content>
 
-  <ion-card *ngIf="isPayDay()">
+  <ion-card>
     <ion-card-header>
-      Pay day
+      Hello,{{fullName}}
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content *ngIf="isPayDay()">
       You should to pay check off
     </ion-card-content>
-    <ion-row>
+    <ion-row *ngIf="isPayDay()">
       <ion-col offset-4>
         <button ion-button icon-start clear (click)="gotoEmail()">
           <ion-icon name="mail"></ion-icon>

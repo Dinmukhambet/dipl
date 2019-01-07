@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {NotificationsProvider} from "../../providers/notificatins/notificatins";
 import {EmailPage} from "../email/email";
+import {Credential, StorageProvider} from "../../providers/storage/storage";
 
 
 @Component({
@@ -10,8 +11,13 @@ import {EmailPage} from "../email/email";
 })
 export class WelcomePage {
 
+  credential: Credential;
+  fullName: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private notifications: NotificationsProvider) {
+              private notifications: NotificationsProvider, private storageService: StorageProvider) {
+    this.credential = navParams.data;
+    this.loadUserName();
     if (this.isPayDay()) {
       notifications.init();
     }
@@ -29,6 +35,12 @@ export class WelcomePage {
 
   gotoEmail() {
     this.navCtrl.push(EmailPage);
+  }
+
+  loadUserName() {
+    this.storageService.getUserName(this.credential).then(res => {
+      this.fullName = res.rows.item(0).fullName;
+    })
   }
 
 
