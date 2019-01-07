@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
       return res.rows.item(0).exist === 1;
     }
 
-    /*this.storageService.getAllUsers(this.creadential).then(res => {
+    this.storageService.getAllUsers(this.creadential).then(res => {
 
       if (hasUser(res)) {
         this.navCtrl.setRoot(WelcomePage);
@@ -43,9 +43,9 @@ export class HomePage implements OnInit {
 
     }).catch(err => {
       alert('rejected');
-    });*/
+    });
 
-    this.navCtrl.setRoot(WelcomePage);
+    // this.navCtrl.setRoot(WelcomePage);
   }
 
   toRegPage() {
