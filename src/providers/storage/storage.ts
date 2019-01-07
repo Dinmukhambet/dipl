@@ -42,13 +42,8 @@ export class StorageProvider {
   }
 
   createUser(user: User) {
-    this.database.executeSql("INSERT INTO users (fullName, user_id, password) VALUES (?,?,?)",
+    return this.database.executeSql("INSERT INTO users (fullName, user_id, password) VALUES (?,?,?)",
       [user.fullName, user.userId, user.password])
-      .then(res => {
-        console.log(res);
-      }).catch(err => {
-      console.log(err)
-    });
   }
 
   getAllUsers(credentials: Credential) {
@@ -56,18 +51,18 @@ export class StorageProvider {
       [credentials.userId, credentials.password])
   }
 
-  getUserName(credentials:Credential) {
-    return this.database.executeSql("select fullName from users where user_id = ?",[credentials.userId]);
+  getUserName(credentials: Credential) {
+    return this.database.executeSql("select fullName from users where user_id = ?", [credentials.userId]);
   }
 
-  insertCounterData(indicator:string, date:string) {
+  insertCounterData(indicator: string, date: string) {
     this.database.executeSql('insert into history(indicator, date) values(?,?)', [indicator, date])
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
 
   getCounterData() {
-    return this.database.executeSql('select * from history',[]);
+    return this.database.executeSql('select * from history', []);
   }
 
 }

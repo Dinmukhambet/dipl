@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MenuController, NavController, NavParams} from 'ionic-angular';
 import {StorageProvider, User} from "../../providers/storage/storage";
+import {ReturnPage} from "../return/return";
 
 @Component({
   selector: 'page-registration',
@@ -29,7 +30,14 @@ export class RegistrationPage {
   }
 
   regUser() {
-    this.storageService.createUser(this.user);
+    this.storageService.createUser(this.user)
+      .then(res => {
+        this.navCtrl.push(ReturnPage).then(value => {
+          // alert('User registration completed');
+        });
+      }).catch(err => {
+      console.log(err)
+    });
 
   }
 

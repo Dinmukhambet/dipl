@@ -22,6 +22,7 @@ import {LocalNotifications} from '@ionic-native/local-notifications';
 import {NotificationsProvider} from '../providers/notificatins/notificatins';
 import {CalcPage} from "../pages/calc/calc";
 import {AboutPage} from "../pages/about/about";
+import {ReturnPage} from "../pages/return/return";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {AboutPage} from "../pages/about/about";
     EmailPage,
     HistoryPage,
     CalcPage,
-    AboutPage
+    AboutPage,
+    ReturnPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import {AboutPage} from "../pages/about/about";
     EmailPage,
     HistoryPage,
     CalcPage,
-    AboutPage
+    AboutPage,
+    ReturnPage
   ],
   providers: [
     StatusBar,
